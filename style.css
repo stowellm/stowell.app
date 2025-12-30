@@ -58,19 +58,29 @@ body {
   align-items: center;
 }
 
+.link-box svg {
+  width: 20px;          /* consistent width for all icons */
+  height: 20px;         /* consistent height */
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;       /* prevent icons from shrinking */
+}
+
 .link-box {
-  display: flex;
-  align-items: center;
+  display: inline-flex;        /* inline-flex keeps the button sized to content */
+  align-items: center;         /* vertical center icon + text */
   justify-content: center;
   gap: 0.5rem;
   text-decoration: none;
   color: var(--fg);
   background-color: var(--box-bg);
-  padding: 0.9rem 1.6rem;
+  padding: 0.9rem 1.6rem;      /* vertical | horizontal */
   border-radius: 8px;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.06);
   transition: background-color 0.15s ease, transform 0.15s ease;
+  min-width: 150px;            /* ensure small text buttons are not too tiny */
+  text-align: center;
 }
 
 .link-box:hover {

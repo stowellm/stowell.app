@@ -1,3 +1,3 @@
-# stowell.app
+# stowellm.github.io
 
-Web configuration for stowell.app
+Web index for stowell.app

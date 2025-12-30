@@ -1,0 +1,85 @@
+:root {
+  --bg: #272822;
+  --fg: #f8f8f2;
+  --accent: #66d9ef;
+  --box-bg: #3e3d32;
+  --box-hover: #49483e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  padding: 2.5rem 3rem;
+}
+
+.name {
+  margin: 0 0 2rem;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.subtitle {
+  margin: 0 0 2rem 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #f8f8f2cc;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.link-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--fg);
+  background-color: var(--box-bg);
+  padding: 0.9rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.link-box:hover {
+  background-color: var(--box-hover);
+  transform: translateY(-2px);
+}
+
+.link-box:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}

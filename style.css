@@ -38,17 +38,19 @@ body {
 }
 
 .name {
-  margin: 0 0 0.5rem 0; /* small space to subtitle */
-  font-size: clamp(2rem, 8vw, 3rem); /* responsive font scaling */
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(2rem, 5vw, 3rem);  /* scales with viewport */
   font-weight: 800;
   letter-spacing: 0.03em;
+  white-space: nowrap;                /* force single line */
+  max-width: 100%;                    /* never exceed container */
 }
 
 .subtitle {
   margin: 0 0 2rem 0; /* space before buttons */
-  font-size: clamp(1rem, 4vw, 1.2rem); /* responsive */
+  font-size: clamp(0.9rem, 3vw, 1.2rem); /* responsive */
   font-weight: 400;
-  color: #f8f8f2cc; /* slightly transparent */
+  color: #f8f8f2cc;   /* slightly transparent */
 }
 
 .links {
@@ -100,6 +102,9 @@ body {
   }
   .link-box {
     width: 100%; /* buttons stretch full width on tiny screens */
+  }
+  .name {
+    font-size: 5vw; /* scale down more aggressively on tiny screens */
   }
 }
 

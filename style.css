@@ -1,156 +1,178 @@
-/* Monokai-inspired color palette */
+/* ===============================
+   Variables / Monokai color palette
+   =============================== */
 :root {
-  --bg: #272822;
-  --fg: #f8f8f2;
-  --accent: #66d9ef;
-  --box-bg: #3e3d32;
-  --box-hover: #49483e;
+    --bg: #272822;
+    --fg: #f8f8f2;
+    --accent: #66d9ef;
+    --box-bg: #3e3d32;
+    --box-hover: #49483e;
 }
 
+/* ===============================
+   Reset / box-sizing
+   =============================== */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html,
 body {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--fg);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Ubuntu, Cantarell, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem; /* small padding for mobile screens */
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell,
+        sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* small padding for mobile screens */
 }
 
+/* ===============================
+   Layout / Container
+   =============================== */
 .container {
-  text-align: center;
-  padding: 2rem 2.5rem;
-  max-width: 400px; /* prevents excessive width on large screens */
-  width: 100%;
-  position: relative;
-  z-index: 1;
+    text-align: center;
+    padding: 2rem 2.5rem;
+    max-width: 400px; /* prevents excessive width on large screens */
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
+/* ===============================
+   Typography
+   =============================== */
 .name {
-  margin: 0 0 0.5rem 0;
-  font-size: clamp(2rem, 5vw, 3rem);  /* scales with viewport */
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  white-space: nowrap;                /* force single line */
-  max-width: 100%;                    /* never exceed container */
+    margin: 0 0 0.5rem 0;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    white-space: nowrap; /* force single line */
+    max-width: 100%;
 }
 
 .subtitle {
-  margin: 0 0 2rem 0; /* space before buttons */
-  font-size: clamp(0.9rem, 3vw, 1.2rem); /* responsive */
-  font-weight: 400;
-  color: #f8f8f2cc;   /* slightly transparent */
+    margin: 0 0 2rem 0;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    font-weight: 400;
+    color: #f8f8f2cc; /* slightly transparent */
 }
 
+/* ===============================
+   Links / Buttons
+   =============================== */
 .links {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem; /* vertical spacing between buttons */
-  align-items: center;
-}
-
-.link-box svg {
-  width: 20px;          /* consistent width for all icons */
-  height: 20px;         /* consistent height */
-  display: inline-block;
-  vertical-align: middle;
-  flex-shrink: 0;       /* prevent icons from shrinking */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* vertical spacing between buttons */
+    align-items: center;
 }
 
 .link-box {
-  display: inline-flex;        /* inline-flex keeps the button sized to content */
-  align-items: center;         /* vertical center icon + text */
-  justify-content: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: var(--fg);
-  background-color: var(--box-bg);
-  padding: 0.9rem 1.6rem;      /* vertical | horizontal */
-  border-radius: 8px;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: background-color 0.15s ease, transform 0.15s ease;
-  min-width: 150px;            /* ensure small text buttons are not too tiny */
-  text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--fg);
+    background-color: var(--box-bg);
+    padding: 0.9rem 1.6rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: background-color 0.15s ease, transform 0.15s ease;
+    min-width: 150px;
+    text-align: center;
 }
 
 .link-box:hover {
-  background-color: var(--box-hover);
-  transform: translateY(-2px);
-  color: var(--accent);
+    background-color: var(--box-hover);
+    transform: translateY(-2px);
+    color: var(--accent);
 }
 
 .link-box:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
-/* adjust layout for very small screens */
-@media (max-width: 400px) {
-  .container {
-    padding: 1.5rem 1rem;
-  }
-  .link-box {
-    width: 100%; /* buttons stretch full width on tiny screens */
-  }
-  .name {
-    font-size: 5vw; /* scale down more aggressively on tiny screens */
-  }
+.link-box svg {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
 }
 
 .icon {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
-/* Twinkling stars */
+/* ===============================
+   Stars / Effects
+   =============================== */
 .stars {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background-color: rgba(248, 248, 242, 0.8);
-  border-radius: 50%;
-  opacity: 0;
-  animation-name: twinkle, drift;
-  animation-iteration-count: infinite, infinite;
-  animation-timing-function: ease-in-out, linear;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: rgba(248, 248, 242, 0.8);
+    border-radius: 50%;
+    opacity: 0;
+    animation-name: twinkle, drift;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: ease-in-out, linear;
 }
 
+/* Twinkle animation */
 @keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.9;
-  }
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.9;
+    }
 }
 
+/* Horizontal rightward drift */
 @keyframes drift {
-  from {
-    transform: translateX(-200px);
-  }
-  to {
-    transform: translateX(100vw);
-  }
+    from {
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+/* ===============================
+   Responsive / Media Queries
+   =============================== */
+@media (max-width: 400px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .link-box {
+        width: 100%; /* buttons stretch full width on tiny screens */
+    }
+
+    .name {
+        font-size: 5vw; /* scale down more aggressively on tiny screens */
+    }
 }

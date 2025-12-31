@@ -35,6 +35,8 @@ body {
   padding: 2rem 2.5rem;
   max-width: 400px; /* prevents excessive width on large screens */
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .name {
@@ -88,6 +90,7 @@ body {
 .link-box:hover {
   background-color: var(--box-hover);
   transform: translateY(-2px);
+  color: var(--accent);
 }
 
 .link-box:focus-visible {
@@ -111,4 +114,43 @@ body {
 .icon {
   display: flex;
   align-items: center;
+}
+
+/* Twinkling stars */
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(248, 248, 242, 0.8);
+  border-radius: 50%;
+  opacity: 0;
+  animation-name: twinkle, drift;
+  animation-iteration-count: infinite, infinite;
+  animation-timing-function: ease-in-out, linear;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }

@@ -63,7 +63,7 @@ body {
     margin: 0 0 2rem 0;
     font-size: clamp(0.9rem, 3vw, 1.2rem);
     font-weight: 400;
-    color: #f8f8f2cc; /* slightly transparent */
+    color: #f8f8f2e6; /* 90% opacity for better contrast */
 }
 
 /* ===============================
@@ -97,6 +97,18 @@ body {
     background-color: var(--box-hover);
     transform: translateY(-2px);
     color: var(--accent);
+}
+
+.link-gitlab:hover {
+    color: #fc6d26;
+}
+
+.link-github:hover {
+    color: #8b949e;
+}
+
+.link-linkedin:hover {
+    color: #66d9ef;
 }
 
 .link-box:focus-visible {
